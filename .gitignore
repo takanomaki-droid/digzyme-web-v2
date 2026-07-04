@@ -1,0 +1,5 @@
+*.bak
+*.bak2
+index_backup*.html
+split_lang.py
+.claude/

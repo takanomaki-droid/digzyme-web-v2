@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="digzyme Solutions — コアテクノロジーを基盤とした解析から、製造まで広がり続けるdigzymeのソリューション。">
+<title>Solutions | digzyme Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f1f0eb;--bg-alt:#e9e7df;
+  --text:#3b4043;--text-2:rgba(59,64,67,.65);--text-3:rgba(59,64,67,.4);
+  --accent:#8b1a10;--accent-d:rgba(139,26,16,.1);--accent-g:rgba(139,26,16,.28);
+  --border:rgba(59,64,67,.13);--nav-h:72px;--max:1200px;
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--ease:.3s cubic-bezier(.4,0,.2,1);
+  --font-en:'Space Grotesk','Inter',sans-serif;--font-jp:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-jp);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 40px}
+.section-pad{padding:120px 0}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;font-family:var(--font-en)}
+.label::before{content:'';display:block;width:28px;height:1px;background:var(--accent)}
+.section-h{font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:24px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:200;display:flex;align-items:center;transition:background var(--ease),border-color var(--ease);border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(241,240,235,.96);backdrop-filter:blur(20px);border-bottom-color:var(--border)}
+.nav-inner{width:100%;max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:34px;height:34px;flex-shrink:0}
+.nav-logo-mark svg{width:100%;height:100%}
+.nav-logo-text{font-family:var(--font-en);font-size:19px;font-weight:700;letter-spacing:-.5px;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:7px 12px;border-radius:var(--r-sm);font-size:13px;font-weight:500;color:var(--text-2);transition:color var(--ease);font-family:var(--font-en)}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active{font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-toggle{font-size:12px;font-weight:700;color:var(--text-2);font-family:var(--font-en);letter-spacing:.05em;transition:color var(--ease)}
+.lang-toggle:hover{color:var(--accent)}
+.nav-cta{padding:8px 20px;background:var(--accent);color:var(--bg);font-weight:700;font-size:12.5px;border-radius:999px;transition:opacity var(--ease);font-family:var(--font-en)}
+.nav-cta:hover{opacity:.8}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;display:block}
+#mobileNav{display:none;position:fixed;inset:0;z-index:199;background:rgba(241,240,235,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#mobileNav.open{display:flex}
+#mobileNav a{font-size:26px;font-weight:700;color:var(--text-2);font-family:var(--font-en);transition:color var(--ease)}
+#mobileNav a:hover{color:var(--accent)}
+.mnav-close{position:absolute;top:24px;right:28px;font-size:28px;cursor:pointer;color:var(--text-2);background:none;border:none}
+.page-hero{padding:calc(var(--nav-h) + 80px) 0 64px;border-bottom:1px solid var(--border)}
+.ph-label{font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.ph-h1{font-size:clamp(36px,6vw,72px);font-weight:900;letter-spacing:-2px;line-height:1;color:var(--text)}
+/* OVERVIEW */
+.sol-overview{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.sol-overview-text p{font-size:15.5px;color:var(--text-2);line-height:1.95;margin-bottom:16px}
+.sol-flow{background:var(--bg-alt);border-radius:var(--r-lg);padding:40px;display:flex;flex-direction:column;gap:0}
+.sf-step{display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--border);position:relative}
+.sf-step:last-child{border-bottom:none}
+.sf-num{font-family:var(--font-en);font-size:36px;font-weight:900;color:var(--accent-g);line-height:1;width:48px;flex-shrink:0;text-align:center}
+.sf-content-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.sf-content-sub{font-size:12.5px;color:var(--text-3);font-family:var(--font-en)}
+/* CORE SOLUTIONS */
+.core-grid{display:flex;flex-direction:column;gap:2px}
+.core-row{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.core-row.rev{direction:rtl}
+.core-row.rev>*{direction:ltr}
+.core-visual{background:var(--bg-alt);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:48px 48px 40px;position:relative;overflow:hidden;min-height:340px}
+.core-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-d) 0%,transparent 60%)}
+.core-visual-num{font-family:var(--font-en);font-size:100px;font-weight:900;color:rgba(59,64,67,.06);line-height:1;position:absolute;top:24px;right:24px;z-index:0}
+.core-visual-icon{font-size:48px;position:relative;z-index:1;margin-bottom:16px}
+.core-visual-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);position:relative;z-index:1;font-family:var(--font-en)}
+.core-text{padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
+.core-title{font-size:clamp(20px,2.5vw,30px);font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:20px}
+.core-body{font-size:14.5px;color:var(--text-2);line-height:1.9;margin-bottom:28px}
+.core-services{list-style:none;display:flex;flex-direction:column;gap:10px}
+.core-services li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)}
+.core-services li::before{content:'';width:18px;height:1px;background:var(--accent);flex-shrink:0}
+.core-services .svc-en{font-family:var(--font-en);font-weight:600;color:var(--text)}
+/* INDUSTRIES */
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.industry-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r-md);padding:28px 24px;transition:all var(--ease)}
+.industry-card:hover{border-color:var(--accent-g);transform:translateY(-4px)}
+.industry-icon{font-size:32px;margin-bottom:16px}
+.industry-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
+.industry-body{font-size:12.5px;color:var(--text-2);line-height:1.75}
+/* CTA */
+.sol-cta{background:var(--text);color:var(--bg);border-radius:var(--r-lg);padding:64px 56px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.sol-cta-h{font-size:clamp(22px,3vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.2}
+.sol-cta-sub{font-size:14px;color:rgba(241,240,235,.6);margin-top:10px}
+.btn-primary{padding:14px 28px;background:var(--accent);color:var(--bg);font-weight:700;font-size:13.5px;border-radius:999px;transition:opacity var(--ease);font-family:var(--font-en);white-space:nowrap;display:inline-block}
+.btn-primary:hover{opacity:.8}
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
+.footer-brand-desc{font-size:13px;color:var(--text-3);line-height:1.8;margin-top:16px;max-width:260px}
+.footer-col-h{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);margin-bottom:16px;font-family:var(--font-en)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:var(--text-3);transition:color var(--ease)}
+.footer-links a:hover{color:var(--accent)}
+.footer-address{font-size:12px;color:var(--text-3);line-height:1.7;margin-top:4px}
+.footer-address-h{font-size:11.5px;font-weight:600;color:var(--text-2);margin-bottom:2px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text-3);font-family:var(--font-en)}
+.footer-socials{display:flex;gap:10px}
+.footer-social{width:34px;height:34px;background:rgba(59,64,67,.06);border:1px solid var(--border);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:var(--font-en);transition:all var(--ease)}
+.footer-social:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:1024px){
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .sol-overview{grid-template-columns:1fr;gap:48px}
+  .core-row,.core-row.rev{grid-template-columns:1fr;direction:ltr}
+  .core-visual{min-height:220px}
+  .core-text{padding:40px 32px}
+}
+@media(max-width:768px){
+  :root{--nav-h:60px}
+  .container{padding:0 24px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .section-pad{padding:80px 0}
+  .sol-cta{grid-template-columns:1fr;gap:24px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-inner{padding:0 24px}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .industry-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="mobileNav">
+  <button class="mnav-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html" onclick="closeMobileNav()">Top</a>
+  <a href="about.html" onclick="closeMobileNav()">About Us</a>
+  <a href="technology.html" onclick="closeMobileNav()">Technology</a>
+  <a href="solutions.html" onclick="closeMobileNav()">Solutions</a>
+  <a href="case.html" onclick="closeMobileNav()">Case</a>
+  <a href="news.html" onclick="closeMobileNav()">News</a>
+  <a href="recruit.html" onclick="closeMobileNav()">Recruit</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+</div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="19" cy="19" r="18" stroke="#8b1a10" stroke-width="1.5" opacity=".4"/>
+          <circle cx="19" cy="19" r="10" stroke="#8b1a10" stroke-width="2" fill="none"/>
+          <circle cx="19" cy="19" r="3" fill="#8b1a10"/>
+          <line x1="19" y1="9" x2="19" y2="1" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="19" y1="29" x2="19" y2="37" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9" y1="19" x2="1" y2="19" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29" y1="19" x2="37" y2="19" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="11.5" cy="11.5" r="1.5" fill="#8B1A10" opacity=".8"/>
+          <circle cx="26.5" cy="26.5" r="1.5" fill="#8B1A10" opacity=".8"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">digzyme</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Top</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="solutions.html" class="active">Solutions</a></li>
+      <li><a href="case.html">Case</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="recruit.html">Recruit</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="lang-toggle" href="en/solutions.html">EN</a>
+      <a class="nav-cta" href="contact.html">Contact</a>
+      <button class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="ph-label">Solutions</div>
+    <h1 class="ph-h1">ソリューション</h1>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section-pad">
+  <div class="container">
+    <div class="sol-overview">
+      <div class="reveal">
+        <div class="label">digzyme Solutions</div>
+        <h2 class="section-h">ひろがる<br>digzymeの<br>ソリューション</h2>
+        <div class="sol-overview-text">
+          <p>コアテクノロジーを基盤とした解析から、製造まで広がり続けるdigzymeのソリューション。単体でもソリューションはご提供できますのでご相談ください。</p>
+        </div>
+      </div>
+      <div class="sol-flow reveal d1">
+        <div class="sf-step">
+          <div class="sf-num">01</div>
+          <div>
+            <div class="sf-content-h">コンサルティング</div>
+            <div class="sf-content-sub">Consulting</div>
+          </div>
+        </div>
+        <div class="sf-step">
+          <div class="sf-num">02</div>
+          <div>
+            <div class="sf-content-h">酵素探索・改良・蓄積</div>
+            <div class="sf-content-sub">Discovery · Improvement · Library</div>
+          </div>
+        </div>
+        <div class="sf-step">
+          <div class="sf-num">03</div>
+          <div>
+            <div class="sf-content-h">酵素・化合物製造</div>
+            <div class="sf-content-sub">Manufacturing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE SOLUTIONS -->
+<section style="background:var(--bg-alt);padding:2px 0">
+  <div class="core-grid">
+
+    <div class="core-row reveal">
+      <div class="core-visual">
+        <div class="core-visual-num">01</div>
+        <div class="core-visual-icon">🔬</div>
+        <div class="core-visual-label">Consulting</div>
+      </div>
+      <div class="core-text">
+        <h3 class="core-title">酵素開発コンサルティング</h3>
+        <p class="core-body">酵素を起点とした新規事業開発コンサルティング。バイオプロセスを用いた新規事業やバイオ化など、バイオインフォマティクスによる解析を交えながらコンサルティングします。</p>
+        <ul class="core-services">
+          <li><span class="svc-en">バイオプロセス</span>新規事業開発支援</li>
+          <li><span class="svc-en">バイオ化</span>可能性調査・戦略立案</li>
+          <li>市場・知財・技術ランドスケープ分析</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="core-row rev reveal">
+      <div class="core-visual">
+        <div class="core-visual-num">02</div>
+        <div class="core-visual-icon">⚙️</div>
+        <div class="core-visual-label">Discovery & Design</div>
+      </div>
+      <div class="core-text">
+        <h3 class="core-title">酵素をさがす・改良する・あつめる</h3>
+        <p class="core-body">バイオインフォマティクスによる酵素探索・改良でご希望の酵素をデザイン。デザイン酵素をライブラリとして蓄積し、産業用途に合わせた酵素を提供します。</p>
+        <ul class="core-services">
+          <li><span class="svc-en">生合成経路探索</span></li>
+          <li><span class="svc-en">digzyme Custom Enzyme Lab™</span></li>
+          <li><span class="svc-en">digzyme in silico DMS™</span></li>
+          <li><span class="svc-en">digzyme Designed Library™</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="core-row reveal">
+      <div class="core-visual">
+        <div class="core-visual-num">03</div>
+        <div class="core-visual-icon">🏭</div>
+        <div class="core-visual-label">Manufacturing</div>
+      </div>
+      <div class="core-text">
+        <h3 class="core-title">酵素・化合物をつくる</h3>
+        <p class="core-body">酵素ライブラリを活用し、効率的に酵素・化合物を大量に製造できるように一連のプロセスを開発します。</p>
+        <ul class="core-services">
+          <li>大腸菌・酵母・枯草菌による組換えタンパク質発現</li>
+          <li>精製プロセス開発・スケールアップ</li>
+          <li><span class="svc-en">digzyme Express™</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Industries</div>
+      <h2 class="section-h">対応業種</h2>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-card reveal">
+        <div class="industry-icon">🍱</div>
+        <div class="industry-name">食品・飲料</div>
+        <div class="industry-body">酵素反応による新規機能性成分の合成・天然素材の機能最適化。食の豊かさと持続可能性を両立します。</div>
+      </div>
+      <div class="industry-card reveal d1">
+        <div class="industry-icon">⚗️</div>
+        <div class="industry-name">化学</div>
+        <div class="industry-body">化学反応の生体触媒への置換による省エネ・高選択性プロセス開発。グリーンケミストリーの実現を支援します。</div>
+      </div>
+      <div class="industry-card reveal d2">
+        <div class="industry-icon">💊</div>
+        <div class="industry-name">医薬品</div>
+        <div class="industry-body">難合成中間体の酵素的製造・医薬品原薬の生体触媒プロセス確立。高品質・低コストを同時に追求します。</div>
+      </div>
+      <div class="industry-card reveal d3">
+        <div class="industry-icon">🧵</div>
+        <div class="industry-name">繊維・素材</div>
+        <div class="industry-body">バイオ素材の機能化・廃繊維のケミカルリサイクル酵素開発。サーキュラーエコノミーの基盤を構築します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-pad" style="padding-top:0;padding-bottom:120px">
+  <div class="container">
+    <div class="sol-cta reveal">
+      <div>
+        <h3 class="sol-cta-h">単体でのご相談も<br>受け付けています</h3>
+        <p class="sol-cta-sub">まずはお気軽にお問い合わせください。</p>
+      </div>
+      <a href="contact.html" class="btn-primary">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="nav-logo" href="index.html">
+          <div class="nav-logo-mark">
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="19" cy="19" r="18" stroke="#8b1a10" stroke-width="1.5" opacity=".4"/>
+              <circle cx="19" cy="19" r="10" stroke="#8b1a10" stroke-width="2" fill="none"/>
+              <circle cx="19" cy="19" r="3" fill="#8b1a10"/>
+              <line x1="19" y1="9" x2="19" y2="1" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="19" y1="29" x2="19" y2="37" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="9" y1="19" x2="1" y2="19" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="29" y1="19" x2="37" y2="19" stroke="#8b1a10" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="11.5" cy="11.5" r="1.5" fill="#8B1A10" opacity=".8"/>
+              <circle cx="26.5" cy="26.5" r="1.5" fill="#8B1A10" opacity=".8"/>
+            </svg>
+          </div>
+          <span class="nav-logo-text">digzyme</span>
+        </a>
+        <p class="footer-brand-desc">ものづくりに、まだ見ぬ選択肢を。人と地球に、持続する活力を。</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Message</a></li>
+          <li><a href="about.html">Team</a></li>
+          <li><a href="about.html">Company Profile</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Services</div>
+        <ul class="footer-links">
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="case.html">Case Studies</a></li>
+          <li><a href="recruit.html">Recruit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Access</div>
+        <div class="footer-address">
+          <div class="footer-address-h">虎ノ門本社</div>
+          〒105-0001 東京都港区虎ノ門二丁目2番1号<br>住友不動産虎ノ門タワー6階 Room4
+          <div class="footer-address-h" style="margin-top:14px">葛西ラボ</div>
+          〒134-0081 東京都江戸川区北葛西1丁目16番13号<br>三井リンクラボ葛西306号室
+        </div>
+        <div style="margin-top:20px">
+          <div class="footer-col-h">Legal</div>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 digzyme Inc. All rights reserved.</div>
+      <div class="footer-socials">
+        <a class="footer-social" href="#">𝕏</a>
+        <a class="footer-social" href="#">in</a>
+        <a class="footer-social" href="#">GH</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow = ''; }
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
