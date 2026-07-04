@@ -1156,6 +1156,178 @@ footer {
   }
 }
 
+/* ===================================================
+   Industry Impact Carousel
+=================================================== */
+#sec-impact {
+  background: var(--bg);
+  padding: var(--pad-sec) 0;
+}
+
+.impact-wrap { margin-top: 56px; }
+
+.impact-slider {
+  position: relative;
+}
+
+.impact-overflow {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+}
+
+.impact-track {
+  display: flex;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.impact-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 72px 88px 64px;
+  background: var(--bg-alt);
+}
+
+.impact-icon {
+  width: 52px;
+  height: 52px;
+  color: var(--accent);
+  margin-bottom: 28px;
+  flex-shrink: 0;
+}
+
+.impact-tag {
+  display: inline-block;
+  font-family: var(--font-jp);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #8b1a10;
+  background: rgba(139,26,16,0.07);
+  border: 1px solid rgba(139,26,16,0.18);
+  padding: 4px 16px;
+  border-radius: 999px;
+  margin-bottom: 36px;
+  letter-spacing: 0.04em;
+}
+
+.impact-headline {
+  font-family: var(--font-jp);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  line-height: 1.4;
+  color: var(--text);
+  max-width: 720px;
+  margin-bottom: 18px;
+}
+
+.impact-note {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+.impact-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--ease);
+  z-index: 2;
+}
+
+.impact-arrow:hover {
+  background: var(--accent);
+  color: #f1f0eb;
+  border-color: var(--accent);
+}
+
+.impact-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.impact-prev { left: -22px; }
+.impact-next { right: -22px; }
+
+.impact-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.impact-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--ease);
+}
+
+.impact-dot.active {
+  background: var(--accent);
+  transform: scale(1.4);
+}
+
+@media (max-width: 900px) {
+  .impact-slide { padding: 56px 36px 48px; }
+  .impact-arrow { display: none; }
+}
+
+/* ─── Impact icon animations ─────────────────────────────── */
+.impact-icon{width:260px;max-width:90%;height:auto;color:var(--accent);margin-bottom:20px}
+/* sequential flow: left → enzyme → right */
+@keyframes fl-pulse{0%,5%{opacity:.15}28%,72%{opacity:1}92%,100%{opacity:.15}}
+.fl-l{animation:fl-pulse 3.4s ease-in-out infinite}
+.fl-m{animation:fl-pulse 3.4s ease-in-out infinite .9s}
+.fl-r{animation:fl-pulse 3.4s ease-in-out infinite 1.8s}
+/* S5: crystals pop in, rays draw out */
+@keyframes s5-pop{0%,5%{opacity:0;transform:scale(0)}18%,80%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(.8)}}
+.s5-s1{animation:s5-pop 4.8s ease infinite;transform-box:fill-box;transform-origin:center}
+.s5-s2{animation:s5-pop 4.8s ease infinite .8s;transform-box:fill-box;transform-origin:center}
+.s5-s3{animation:s5-pop 4.8s ease infinite 1.6s;transform-box:fill-box;transform-origin:center}
+.s5-s4{animation:s5-pop 4.8s ease infinite 2.4s;transform-box:fill-box;transform-origin:center}
+@keyframes s5-ray{0%,45%{stroke-dashoffset:30;opacity:0}65%,88%{stroke-dashoffset:0;opacity:.9}97%,100%{stroke-dashoffset:30;opacity:0}}
+.s5-r1{stroke-dasharray:30;animation:s5-ray 4.8s ease-in-out infinite 2.2s}
+.s5-r2{stroke-dasharray:30;animation:s5-ray 4.8s ease-in-out infinite 2.6s}
+.s5-r3{stroke-dasharray:30;animation:s5-ray 4.8s ease-in-out infinite 3.0s}
+/* S6: ripple network */
+.s6-rip{transform-box:fill-box;transform-origin:center}
+.s6-r1{animation:s6-rip 2.8s ease-out infinite}
+.s6-r2{animation:s6-rip 2.8s ease-out infinite .7s}
+.s6-r3{animation:s6-rip 2.8s ease-out infinite 1.4s}
+@keyframes s6-rip{0%{transform:scale(1);opacity:.72}100%{transform:scale(4);opacity:0}}
+.s6-n1{animation:s6-nd 2.8s ease-out infinite .5s;transform-box:fill-box;transform-origin:center}
+.s6-n2{animation:s6-nd 2.8s ease-out infinite .8s;transform-box:fill-box;transform-origin:center}
+.s6-n3{animation:s6-nd 2.8s ease-out infinite 1.1s;transform-box:fill-box;transform-origin:center}
+.s6-n4{animation:s6-nd 2.8s ease-out infinite 1.4s;transform-box:fill-box;transform-origin:center}
+.s6-n5{animation:s6-nd 2.8s ease-out infinite 1.7s;transform-box:fill-box;transform-origin:center}
+@keyframes s6-nd{0%,10%{opacity:0;transform:scale(0)}28%,88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0)}}
+.s6-l1{stroke-dasharray:200;animation:s6-ln 2.8s ease-out infinite .5s}
+.s6-l2{stroke-dasharray:200;animation:s6-ln 2.8s ease-out infinite .8s}
+.s6-l3{stroke-dasharray:200;animation:s6-ln 2.8s ease-out infinite 1.1s}
+.s6-l4{stroke-dasharray:200;animation:s6-ln 2.8s ease-out infinite 1.4s}
+.s6-l5{stroke-dasharray:200;animation:s6-ln 2.8s ease-out infinite 1.7s}
+@keyframes s6-ln{0%{stroke-dashoffset:200}26%,86%{stroke-dashoffset:0}100%{stroke-dashoffset:200}}
+
 </style>
 </head>
 <body>
@@ -1352,6 +1524,277 @@ footer {
   </nav>
 </div>
 </div>
+
+
+<!-- ===================================================
+     SECTION 4.5 — Industry Impact Carousel
+=================================================== -->
+<section id="sec-impact">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Industry Impact</div>
+      <h2 class="section-h">酵素が変える、産業のシーン。</h2>
+    </div>
+    <div class="impact-wrap">
+      <div class="impact-slider">
+        <button class="impact-arrow impact-prev" id="impact-prev" aria-label="前のスライド">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="impact-overflow">
+          <div class="impact-track" id="impact-track">
+
+            <!-- Slide 1: 食品 — 食材→酵素→笑顔の人 -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- LEFT: wheat / grain -->
+                <g class="fl-l" stroke="#3b4043" stroke-width="2">
+                  <line x1="50" y1="72" x2="50" y2="22"/>
+                  <ellipse cx="50" cy="12" rx="8" ry="11"/>
+                  <line x1="50" y1="42" x2="30" y2="28"/>
+                  <ellipse cx="23" cy="23" rx="6" ry="9" transform="rotate(-28,23,23)"/>
+                  <line x1="50" y1="42" x2="70" y2="28"/>
+                  <ellipse cx="77" cy="23" rx="6" ry="9" transform="rotate(28,77,23)"/>
+                </g>
+                <!-- MID: enzyme arrow -->
+                <g class="fl-m" fill="none" stroke="#3b4043" stroke-width="2">
+                  <line x1="108" y1="40" x2="136" y2="40"/>
+                  <circle cx="148" cy="35" r="7" fill="#8b1a10" stroke="none"/>
+                  <circle cx="158" cy="44" r="4.5" fill="#8b1a10" stroke="none" opacity=".75"/>
+                  <circle cx="140" cy="44" r="3.5" fill="#8b1a10" stroke="none" opacity=".6"/>
+                  <line x1="148" y1="42" x2="153" y2="44" stroke="#8b1a10"/>
+                  <line x1="141" y1="42" x2="145" y2="43" stroke="#8b1a10"/>
+                  <line x1="165" y1="40" x2="192" y2="40"/>
+                  <polyline points="188 34 192 40 188 46"/>
+                </g>
+                <!-- RIGHT: happy person eating -->
+                <g class="fl-r" stroke="#3b4043" stroke-width="2">
+                  <circle cx="250" cy="14" r="11" fill="none"/>
+                  <circle cx="246" cy="12" r="2" fill="#3b4043" stroke="none"/>
+                  <circle cx="254" cy="12" r="2" fill="#3b4043" stroke="none"/>
+                  <path d="M244 17 Q250 23 256 17"/>
+                  <line x1="250" y1="25" x2="250" y2="50"/>
+                  <line x1="250" y1="33" x2="230" y2="22"/>
+                  <line x1="250" y1="33" x2="270" y2="22"/>
+                  <line x1="250" y1="50" x2="238" y2="68"/>
+                  <line x1="250" y1="50" x2="262" y2="68"/>
+                  <circle cx="227" cy="19" r="6" fill="#8b1a10" stroke="none"/>
+                </g>
+              </svg>
+              <span class="impact-tag">食品</span>
+              <p class="impact-headline">あの口どけ、あの風味。実は酵素が作っている。</p>
+              <p class="impact-note">食感・風味・テクスチャーの改善</p>
+            </div>
+
+            <!-- Slide 2: 食品 — ゴミ箱→酵素→輝くボトル -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- LEFT: trash can -->
+                <g class="fl-l" stroke="#3b4043" stroke-width="2">
+                  <path d="M24 28 L76 28 L72 74 L28 74 Z"/>
+                  <line x1="16" y1="28" x2="84" y2="28"/>
+                  <path d="M34 28 L34 18 L66 18 L66 28"/>
+                  <line x1="36" y1="36" x2="36" y2="68"/>
+                  <line x1="50" y1="36" x2="50" y2="68"/>
+                  <line x1="64" y1="36" x2="64" y2="68"/>
+                </g>
+                <!-- MID: enzyme arrow -->
+                <g class="fl-m" fill="none" stroke="#3b4043" stroke-width="2">
+                  <line x1="108" y1="40" x2="136" y2="40"/>
+                  <circle cx="148" cy="35" r="7" fill="#8b1a10" stroke="none"/>
+                  <circle cx="158" cy="44" r="4.5" fill="#8b1a10" stroke="none" opacity=".75"/>
+                  <circle cx="140" cy="44" r="3.5" fill="#8b1a10" stroke="none" opacity=".6"/>
+                  <line x1="148" y1="42" x2="153" y2="44" stroke="#8b1a10"/>
+                  <line x1="141" y1="42" x2="145" y2="43" stroke="#8b1a10"/>
+                  <line x1="165" y1="40" x2="192" y2="40"/>
+                  <polyline points="188 34 192 40 188 46"/>
+                </g>
+                <!-- RIGHT: shining bottle -->
+                <g class="fl-r" stroke="#3b4043" stroke-width="2">
+                  <path d="M232 18 L232 30 L218 40 L218 74 L282 74 L282 40 L268 30 L268 18 Z"/>
+                  <line x1="232" y1="18" x2="268" y2="18"/>
+                  <path d="M218 56 L218 74 L282 74 L282 56 Z" fill="#8b1a10" fill-opacity="0.32" stroke="none"/>
+                  <line x1="232" y1="24" x2="242" y2="12" stroke="#8b1a10" stroke-width="2.5"/>
+                  <line x1="252" y1="10" x2="260" y2="17" stroke="#8b1a10" stroke-width="2.5"/>
+                </g>
+              </svg>
+              <span class="impact-tag">食品</span>
+              <p class="impact-headline">捨てていた残渣が、新しい素材になる。</p>
+              <p class="impact-note">廃棄物をフレーバー素材・機能性素材へ</p>
+            </div>
+
+            <!-- Slide 3: 化学 — 複雑配管→酵素→試験管一本 -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none" stroke-linecap="round">
+                <!-- LEFT: complex node network -->
+                <g class="fl-l" stroke="#3b4043">
+                  <circle cx="18" cy="16" r="5" stroke-width="2"/><circle cx="50" cy="10" r="5" stroke-width="2"/><circle cx="82" cy="18" r="5" stroke-width="2"/>
+                  <circle cx="12" cy="44" r="5" stroke-width="2"/><circle cx="48" cy="48" r="5" stroke-width="2"/><circle cx="80" cy="42" r="5" stroke-width="2"/>
+                  <circle cx="28" cy="70" r="5" stroke-width="2"/><circle cx="68" cy="68" r="5" stroke-width="2"/>
+                  <line x1="23" y1="16" x2="45" y2="10" stroke-width="1.5"/><line x1="55" y1="10" x2="77" y2="18" stroke-width="1.5"/>
+                  <line x1="18" y1="21" x2="12" y2="39" stroke-width="1.5"/><line x1="82" y1="23" x2="80" y2="37" stroke-width="1.5"/>
+                  <line x1="17" y1="44" x2="43" y2="48" stroke-width="1.5"/><line x1="53" y1="48" x2="75" y2="42" stroke-width="1.5"/>
+                  <line x1="15" y1="49" x2="25" y2="65" stroke-width="1.5"/><line x1="78" y1="47" x2="72" y2="63" stroke-width="1.5"/>
+                  <line x1="33" y1="70" x2="63" y2="68" stroke-width="1.5"/>
+                  <line x1="22" y1="18" x2="48" y2="48" stroke-width="1" opacity=".5"/>
+                  <line x1="78" y1="20" x2="44" y2="48" stroke-width="1" opacity=".5"/>
+                  <line x1="14" y1="44" x2="50" y2="10" stroke-width="1" opacity=".5"/>
+                </g>
+                <!-- MID: enzyme arrow -->
+                <g class="fl-m" fill="none" stroke="#3b4043" stroke-width="2" stroke-linejoin="round">
+                  <line x1="108" y1="40" x2="136" y2="40"/>
+                  <circle cx="148" cy="35" r="7" fill="#8b1a10" stroke="none"/>
+                  <circle cx="158" cy="44" r="4.5" fill="#8b1a10" stroke="none" opacity=".75"/>
+                  <circle cx="140" cy="44" r="3.5" fill="#8b1a10" stroke="none" opacity=".6"/>
+                  <line x1="148" y1="42" x2="153" y2="44" stroke="#8b1a10"/>
+                  <line x1="141" y1="42" x2="145" y2="43" stroke="#8b1a10"/>
+                  <line x1="165" y1="40" x2="192" y2="40"/>
+                  <polyline points="188 34 192 40 188 46"/>
+                </g>
+                <!-- RIGHT: single test tube -->
+                <g class="fl-r" stroke="#3b4043" stroke-width="2.5" stroke-linejoin="round">
+                  <path d="M238 10 L238 52 Q238 72 250 72 Q262 72 262 52 L262 10"/>
+                  <line x1="236" y1="22" x2="264" y2="22"/>
+                  <path d="M238 52 Q238 72 250 72 Q262 72 262 52 Z" fill="#8b1a10" fill-opacity="0.4" stroke="none"/>
+                  <line x1="238" y1="32" x2="262" y2="32" stroke-width="1" opacity=".4"/>
+                  <line x1="238" y1="42" x2="262" y2="42" stroke-width="1" opacity=".4"/>
+                </g>
+              </svg>
+              <span class="impact-tag">化学</span>
+              <p class="impact-headline">複雑な化学プロセスを、酵素ひとつでシンプルに。</p>
+              <p class="impact-note">工程数削減・コスト低減</p>
+            </div>
+
+            <!-- Slide 4: 化学 — ドクロ・炎・高圧→酵素→葉・試験管・ビーカー -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- LEFT: skull + flame + pressure burst -->
+                <g class="fl-l" stroke="#3b4043" stroke-width="2">
+                  <circle cx="50" cy="23" r="14"/>
+                  <line x1="42" y1="16" x2="46" y2="20"/><line x1="42" y1="20" x2="46" y2="16"/>
+                  <line x1="54" y1="16" x2="58" y2="20"/><line x1="54" y1="20" x2="58" y2="16"/>
+                  <path d="M47 28 L50 33 L53 28"/>
+                  <path d="M36 36 L36 46 L64 46 L64 36"/>
+                  <line x1="44" y1="36" x2="44" y2="46"/>
+                  <line x1="50" y1="36" x2="50" y2="46"/>
+                  <line x1="56" y1="36" x2="56" y2="46"/>
+                  <path d="M14 78 C14 65 20 56 24 62 C24 51 29 56 27 47 C33 54 35 70 26 78 Z"/>
+                  <circle cx="76" cy="63" r="9"/>
+                  <line x1="76" y1="50" x2="76" y2="54"/>
+                  <line x1="89" y1="63" x2="85" y2="63"/>
+                  <line x1="63" y1="63" x2="67" y2="63"/>
+                  <line x1="85" y1="54" x2="82" y2="57"/>
+                  <line x1="67" y1="54" x2="70" y2="57"/>
+                </g>
+                <!-- MID: enzyme arrow -->
+                <g class="fl-m" fill="none" stroke="#3b4043" stroke-width="2">
+                  <line x1="108" y1="40" x2="136" y2="40"/>
+                  <circle cx="148" cy="35" r="7" fill="#8b1a10" stroke="none"/>
+                  <circle cx="158" cy="44" r="4.5" fill="#8b1a10" stroke="none" opacity=".75"/>
+                  <circle cx="140" cy="44" r="3.5" fill="#8b1a10" stroke="none" opacity=".6"/>
+                  <line x1="148" y1="42" x2="153" y2="44" stroke="#8b1a10"/>
+                  <line x1="141" y1="42" x2="145" y2="43" stroke="#8b1a10"/>
+                  <line x1="165" y1="40" x2="192" y2="40"/>
+                  <polyline points="188 34 192 40 188 46"/>
+                </g>
+                <!-- RIGHT: leaf + test tube + beaker -->
+                <g class="fl-r" stroke="#3b4043" stroke-width="2">
+                  <path d="M222 44 C222 22 234 8 278 6 C276 26 258 44 222 44 Z"/>
+                  <line x1="222" y1="44" x2="254" y2="20"/>
+                  <path d="M218 50 L218 62 Q218 76 226 76 Q234 76 234 62 L234 50"/>
+                  <path d="M218 62 Q218 76 226 76 Q234 76 234 62 Z" fill="#8b1a10" fill-opacity="0.4" stroke="none"/>
+                  <path d="M256 50 L248 76 L278 76 L270 50 Z"/>
+                  <line x1="256" y1="50" x2="270" y2="50"/>
+                  <path d="M248 68 L248 76 L278 76 L278 68 Z" fill="#8b1a10" fill-opacity="0.3" stroke="none"/>
+                </g>
+              </svg>
+              <span class="impact-tag">化学</span>
+              <p class="impact-headline">有害な溶媒も、高温・高圧も、いらない。</p>
+              <p class="impact-note">常温・常圧で目的の反応だけを進める</p>
+            </div>
+
+            <!-- Slide 5: 新素材 — ???→酵素→新しい結晶が広がる -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none" stroke-linecap="round">
+                <!-- LEFT: unknown (dashed frame + ?) -->
+                <g class="fl-l" stroke="#3b4043">
+                  <rect x="12" y="8" width="76" height="64" rx="6" stroke-width="1.5" stroke-dasharray="5 4"/>
+                  <path d="M36 30 C36 20 44 14 50 14 C56 14 64 20 64 30 C64 38 50 42 50 50" stroke-width="3"/>
+                  <circle cx="50" cy="60" r="4" fill="#3b4043" stroke="none"/>
+                </g>
+                <!-- MID: enzyme arrow -->
+                <g class="fl-m" fill="none" stroke="#3b4043" stroke-width="2" stroke-linejoin="round">
+                  <line x1="108" y1="40" x2="136" y2="40"/>
+                  <circle cx="148" cy="35" r="7" fill="#8b1a10" stroke="none"/>
+                  <circle cx="158" cy="44" r="4.5" fill="#8b1a10" stroke="none" opacity=".75"/>
+                  <circle cx="140" cy="44" r="3.5" fill="#8b1a10" stroke="none" opacity=".6"/>
+                  <line x1="148" y1="42" x2="153" y2="44" stroke="#8b1a10"/>
+                  <line x1="141" y1="42" x2="145" y2="43" stroke="#8b1a10"/>
+                  <line x1="165" y1="40" x2="192" y2="40"/>
+                  <polyline points="188 34 192 40 188 46"/>
+                </g>
+                <!-- RIGHT: crystals popping + rays -->
+                <g class="fl-r">
+                  <path class="s5-s1" d="M250 18 L262 24 L262 36 L250 42 L238 36 L238 24 Z" fill="#8b1a10" fill-opacity="0.75" stroke="#8b1a10" stroke-width="2"/>
+                  <path class="s5-s2" d="M278 26 L284 30 L284 38 L278 42 L272 38 L272 30 Z" fill="none" stroke="#3b4043" stroke-width="2"/>
+                  <path class="s5-s3" d="M226 30 L232 34 L232 42 L226 46 L220 42 L220 34 Z" fill="none" stroke="#3b4043" stroke-width="2"/>
+                  <path class="s5-s4" d="M253 54 L258 57 L258 63 L253 66 L248 63 L248 57 Z" fill="#3b4043" fill-opacity="0.65" stroke="none"/>
+                  <line class="s5-r1" x1="262" y1="24" x2="280" y2="11" stroke="#8b1a10" stroke-width="2"/>
+                  <line class="s5-r2" x1="262" y1="36" x2="286" y2="48" stroke="#3b4043" stroke-width="2"/>
+                  <line class="s5-r3" x1="250" y1="18" x2="248" y2="4" stroke="#3b4043" stroke-width="2"/>
+                </g>
+              </svg>
+              <span class="impact-tag">新素材</span>
+              <p class="impact-headline">まだ名前のない素材を、酵素で作る。</p>
+              <p class="impact-note">酵素が切り拓く、無限の可能性</p>
+            </div>
+
+            <!-- Slide 6: 全産業 — 酵素から産業へ波紋状に広がる -->
+            <div class="impact-slide">
+              <svg class="impact-icon" viewBox="0 0 300 80" fill="none">
+                <!-- Enzyme (left side) -->
+                <circle cx="70" cy="40" r="11" fill="#8b1a10" stroke="none"/>
+                <circle cx="60" cy="33" r="5" fill="#8b1a10" opacity=".8" stroke="none"/>
+                <circle cx="80" cy="33" r="5" fill="#8b1a10" opacity=".8" stroke="none"/>
+                <circle cx="70" cy="28" r="4" fill="#8b1a10" opacity=".7" stroke="none"/>
+                <!-- Ripple circles -->
+                <circle class="s6-rip s6-r1" cx="70" cy="40" r="11" fill="none" stroke="#8b1a10" stroke-width="2"/>
+                <circle class="s6-rip s6-r2" cx="70" cy="40" r="11" fill="none" stroke="#8b1a10" stroke-width="2"/>
+                <circle class="s6-rip s6-r3" cx="70" cy="40" r="11" fill="none" stroke="#8b1a10" stroke-width="1.5"/>
+                <!-- Lines to industry nodes -->
+                <line class="s6-l1" x1="70" y1="40" x2="196" y2="16" stroke="#3b4043" stroke-width="1.8"/>
+                <line class="s6-l2" x1="70" y1="40" x2="238" y2="10" stroke="#3b4043" stroke-width="1.8"/>
+                <line class="s6-l3" x1="70" y1="40" x2="268" y2="30" stroke="#3b4043" stroke-width="1.8"/>
+                <line class="s6-l4" x1="70" y1="40" x2="264" y2="58" stroke="#3b4043" stroke-width="1.8"/>
+                <line class="s6-l5" x1="70" y1="40" x2="212" y2="66" stroke="#3b4043" stroke-width="1.8"/>
+                <!-- Industry nodes -->
+                <circle class="s6-n1" cx="196" cy="16" r="8" fill="none" stroke="#3b4043" stroke-width="2"/>
+                <circle class="s6-n2" cx="238" cy="10" r="8" fill="none" stroke="#3b4043" stroke-width="2"/>
+                <circle class="s6-n3" cx="268" cy="30" r="8" fill="none" stroke="#3b4043" stroke-width="2"/>
+                <circle class="s6-n4" cx="264" cy="58" r="8" fill="none" stroke="#3b4043" stroke-width="2"/>
+                <circle class="s6-n5" cx="212" cy="66" r="8" fill="none" stroke="#3b4043" stroke-width="2"/>
+              </svg>
+              <span class="impact-tag">全産業</span>
+              <p class="impact-headline">素材が変わると、製品が変わる。製品が変わると、産業が変わる。</p>
+              <p class="impact-note">酵素が変える産業の未来</p>
+            </div>
+
+          </div><!-- /impact-track -->
+        </div><!-- /impact-overflow -->
+        <button class="impact-arrow impact-next" id="impact-next" aria-label="次のスライド">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div><!-- /impact-slider -->
+      <div class="impact-dots" id="impact-dots">
+        <button class="impact-dot active" aria-label="スライド1"></button>
+        <button class="impact-dot" aria-label="スライド2"></button>
+        <button class="impact-dot" aria-label="スライド3"></button>
+        <button class="impact-dot" aria-label="スライド4"></button>
+        <button class="impact-dot" aria-label="スライド5"></button>
+        <button class="impact-dot" aria-label="スライド6"></button>
+      </div>
+    </div><!-- /impact-wrap -->
+  </div><!-- /container -->
+</section>
 
 
 <!-- ===================================================
@@ -2818,6 +3261,40 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── Industry Impact Carousel ────────────────────────────── */
+(function(){
+  'use strict';
+  const track=document.getElementById('impact-track');
+  if(!track)return;
+  const slides=document.querySelectorAll('.impact-slide');
+  const dots=document.querySelectorAll('.impact-dot');
+  const btnPrev=document.getElementById('impact-prev');
+  const btnNext=document.getElementById('impact-next');
+  const N=slides.length;
+  let cur=0,timer=null;
+
+  function go(i){
+    cur=(i+N)%N;
+    track.style.transform='translateX(-'+cur*100+'%)';
+    dots.forEach(function(d,j){d.classList.toggle('active',j===cur);});
+  }
+
+  function startTimer(){
+    clearInterval(timer);
+    timer=setInterval(function(){go(cur+1);},5000);
+  }
+
+  btnPrev.addEventListener('click',function(){go(cur-1);startTimer();});
+  btnNext.addEventListener('click',function(){go(cur+1);startTimer();});
+  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);startTimer();});});
+
+  var wrap=document.querySelector('.impact-wrap');
+  wrap.addEventListener('mouseenter',function(){clearInterval(timer);});
+  wrap.addEventListener('mouseleave',function(){startTimer();});
+
+  startTimer();
+})();
 </script>
 
 
