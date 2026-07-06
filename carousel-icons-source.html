@@ -1,0 +1,259 @@
+<!--
+  digzyme Industry Impact カルーセル アイコン（差し込み用ソース）
+  各 <svg class="icon" ...> ... </svg> を、index.html の対応するスライドのアイコンSVGと丸ごと差し替えてください。
+  キャプション文・タグ・カルーセルの動作は変更不要です。
+-->
+
+<!-- ===================== SLIDE 1  食品：パン（酵素反応→食べて笑顔） ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="酵素反応でできたパンを食べ、もぐもぐして笑顔になる">
+    <style>
+      @keyframes s1_sub{0%{transform:translate(-28px,0);opacity:0}12%{opacity:1}33%{transform:translate(0,0);opacity:1}42%,100%{transform:translate(0,0);opacity:0}}
+      @keyframes s1_prod{0%,45%{transform:translate(0,0);opacity:0}55%{opacity:1}90%{transform:translate(-27px,-9px);opacity:0}100%{opacity:0}}
+      @keyframes s1_pulse{0%,32%{transform:scale(1)}42%{transform:scale(1.13)}54%,100%{transform:scale(1)}}
+      @keyframes s1_eat{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:1}38%{transform:translate(96px,-4px) scale(1);opacity:1}48%{transform:translate(100px,-2px) scale(.12);opacity:0}100%{transform:translate(100px,-2px) scale(.12);opacity:0}}
+      @keyframes s1_open{0%,40%{opacity:1}46%,100%{opacity:0}}
+      @keyframes s1_chewvis{0%,44%{opacity:0}48%,66%{opacity:1}70%,100%{opacity:0}}
+      @keyframes s1_chew{0%,100%{transform:translateY(0)}50%{transform:translateY(2.4px)}}
+      @keyframes s1_smile{0%,70%{opacity:0}78%,100%{opacity:1}}
+      @keyframes s1_eyeN{0%,70%{opacity:1}78%,100%{opacity:0}}
+      @keyframes s1_eyeH{0%,72%{opacity:0}80%,100%{opacity:1}}
+      .s1_sub{animation:s1_sub 3s ease-in-out infinite}
+      .s1_prod{animation:s1_prod 3s ease-in-out infinite}
+      .s1_pulse{transform-origin:82px 48px;animation:s1_pulse 3s ease-in-out infinite}
+      .s1_eat{transform-box:fill-box;transform-origin:center;animation:s1_eat 3s ease-in-out infinite}
+      .s1_open{animation:s1_open 3s ease-in-out infinite}
+      .s1_chewvis{animation:s1_chewvis 3s ease-in-out infinite}
+      .s1_chew{animation:s1_chew .26s ease-in-out infinite}
+      .s1_smile{animation:s1_smile 3s ease-in-out infinite}
+      .s1_eyeN{animation:s1_eyeN 3s ease-in-out infinite}
+      .s1_eyeH{animation:s1_eyeH 3s ease-in-out infinite}
+    </style>
+    <g transform="translate(58,96)" stroke="#3b4043" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M-24 12 Q-24 -2 -22 -4 Q-15 -18 -7 -6 Q0 -18 7 -6 Q15 -18 22 -4 Q24 -2 24 12 Q24 16 20 16 L-20 16 Q-24 16 -24 12 Z" fill="#efe4cf"/></g>
+    <path d="M44 30 L98 30 Q108 30 108 40 L108 58 Q108 68 98 68 L64 68 L56 76 L60 68 L44 68 Q34 68 34 58 L34 40 Q34 30 44 30 Z" fill="#faf9f5" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/>
+    <g class="s1_pulse"><path transform="translate(82,48) rotate(180) scale(.42)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#8b1a10"/></g>
+    <g class="s1_sub"><path transform="translate(75,48)" d="M4.5 0 L2.25 3.9 L-2.25 3.9 L-4.5 0 L-2.25 -3.9 L2.25 -3.9 Z" fill="none" stroke="#8b1a10" stroke-width="2"/></g>
+    <g class="s1_prod"><path transform="translate(75,48)" d="M0 -5 L4.8 -1.5 L3 4 L-3 4 L-4.8 -1.5 Z" fill="#8b1a10"/></g>
+    <g stroke="#3b4043" stroke-width="2.5" stroke-linejoin="round">
+      <circle cx="250" cy="70" r="18" fill="#faf9f5"/>
+      <g class="s1_eyeN"><circle cx="242" cy="64" r="1.8" fill="#3b4043" stroke="none"/><circle cx="258" cy="64" r="1.8" fill="#3b4043" stroke="none"/></g>
+      <g class="s1_eyeH" fill="none" stroke-width="2" stroke-linecap="round"><path d="M238 65 q4 -4 8 0"/><path d="M254 65 q4 -4 8 0"/></g>
+      <ellipse class="s1_open" cx="250" cy="79" rx="6" ry="7" fill="#8b1a10" fill-opacity=".25"/>
+      <g class="s1_chewvis"><g class="s1_chew"><path d="M244 78 q6 4 12 0" fill="none" stroke-width="2" stroke-linecap="round"/></g></g>
+      <path class="s1_smile" d="M243 77 q7 8 14 0" fill="none" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g class="s1_eat"><g transform="translate(150,82) scale(.5)" stroke="#3b4043" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M-24 12 Q-24 -2 -22 -4 Q-15 -18 -7 -6 Q0 -18 7 -6 Q15 -18 22 -4 Q24 -2 24 12 Q24 16 20 16 L-20 16 Q-24 16 -24 12 Z" fill="#efe4cf"/></g></g>
+  </svg>
+
+<!-- ===================== SLIDE 2  食品残渣：ゴミ箱の蓋が開いて吸込み→ボトル＋キラキラ ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ゴミ箱の蓋が開いてゴミ袋を吸い込み酵素で新素材になる">
+    <style>
+      @keyframes s2_lid{0%,12%{transform:rotate(0deg)}26%,52%{transform:rotate(-58deg)}66%,100%{transform:rotate(0deg)}}
+      @keyframes s2_drop{0%,20%{transform:translateY(-40px);opacity:0}27%{opacity:1}50%{transform:translateY(0);opacity:1}57%{transform:translateY(6px);opacity:0}100%{opacity:0}}
+      @keyframes s2_flow{0%,25%{transform:translateX(0);opacity:1}55%{transform:translateX(26px);opacity:1}70%,100%{transform:translateX(26px);opacity:0}}
+      @keyframes s2_bottle{0%,58%{opacity:0}76%{opacity:1}80%{opacity:1}92%,100%{opacity:0}}
+      @keyframes s2_sp0{0%,30%{opacity:0;transform:scale(.4)}38%{opacity:1;transform:scale(1.12)}44%{opacity:.95;transform:scale(1)}80%{opacity:.95;transform:scale(1)}92%,100%{opacity:0;transform:scale(1)}}
+      @keyframes s2_sp1{0%,36%{opacity:0;transform:scale(.4)}44%{opacity:1;transform:scale(1.12)}50%{opacity:.95;transform:scale(1)}80%{opacity:.95;transform:scale(1)}92%,100%{opacity:0;transform:scale(1)}}
+      @keyframes s2_sp2{0%,42%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.12)}56%{opacity:.95;transform:scale(1)}80%{opacity:.95;transform:scale(1)}92%,100%{opacity:0;transform:scale(1)}}
+      @keyframes s2_sp3{0%,48%{opacity:0;transform:scale(.4)}56%{opacity:1;transform:scale(1.12)}62%{opacity:.95;transform:scale(1)}80%{opacity:.95;transform:scale(1)}92%,100%{opacity:0;transform:scale(1)}}
+      .s2_lid{transform-origin:46px 70px;animation:s2_lid 4.5s ease-in-out infinite}
+      .s2_drop{transform-origin:74px 56px;animation:s2_drop 4.5s ease-in-out infinite}
+      .s2_enz{animation:s2_flow 4.5s ease-in-out infinite}
+      .s2_bot{animation:s2_bottle 4.5s ease-in-out infinite}
+      .s2_sp0,.s2_sp1,.s2_sp2,.s2_sp3{transform-box:fill-box;transform-origin:center}
+      .s2_sp0{animation:s2_sp0 4.5s ease-in-out infinite}
+      .s2_sp1{animation:s2_sp1 4.5s ease-in-out infinite}
+      .s2_sp2{animation:s2_sp2 4.5s ease-in-out infinite}
+      .s2_sp3{animation:s2_sp3 4.5s ease-in-out infinite}
+      @keyframes s2_ripple{0%{r:16;opacity:.5}70%,100%{r:52;opacity:0}}
+      .s2_rip{transform-origin:176px 80px;animation:s2_ripple 4.5s ease-out infinite}
+      .s2_rip2{animation-delay:1.2s}.s2_rip3{animation-delay:2.4s}
+      
+    </style>
+    <!-- 箱の本体 -->
+    <g fill="none" stroke="#3b4043" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M52 70 h44 l-5 42 h-34 Z"/>
+      <path d="M66 82 v22 M74 82 v22 M82 82 v22" stroke-width="2"/>
+    </g>
+    <!-- 落ちるゴミ袋 -->
+    <g class="s2_drop"><path transform="translate(74,56)" d="M-8 7 Q-11 -3 -5 -8 Q-9 -13 -3 -12 L0 -8 L3 -12 Q9 -13 5 -8 Q11 -3 8 7 Q0 12 -8 7 Z" fill="#727778" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/></g>
+    <!-- 蓋（ヒンジ46,70で開閉） -->
+    <g class="s2_lid" fill="none" stroke="#3b4043" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M46 70 h56"/>
+      <path d="M66 64 h16 v6"/>
+    </g>
+    <circle class="s2_rip s2_rip1" cx="176" cy="80" r="18" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <circle class="s2_rip s2_rip2" cx="176" cy="80" r="18" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <circle class="s2_rip s2_rip3" cx="176" cy="80" r="18" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <path transform="translate(176,80) rotate(180)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#8b1a10"/>
+    <line x1="205" y1="80" x2="248" y2="80" stroke="#3b4043" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <path d="M244 74 l8 6 -8 6" fill="none" stroke="#3b4043" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g class="s2_bot" fill="none" stroke="#8b1a10" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M308 62 h20 v10 l6 10 v34 h-32 v-34 l6 -10 Z" fill="#8b1a10" fill-opacity=".12"/>
+      <path d="M314 56 h8 v6 h-8 Z" fill="#8b1a10" fill-opacity=".2"/>
+      <path d="M304 100 h32" stroke-width="2"/>
+    </g>
+    <g fill="#8b1a10">
+      <path class="s2_sp0" d="M300 50 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 Z"/>
+      <path class="s2_sp1" d="M348 60 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6 Z"/>
+      <path class="s2_sp2" d="M344 96 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6 Z"/>
+      <path class="s2_sp3" d="M298 84 l1.4 3.5 3.5 1.4 -3.5 1.4 -1.4 3.5 -1.4 -3.5 -3.5 -1.4 3.5 -1.4 Z"/>
+    </g>
+  </svg>
+
+<!-- ===================== SLIDE 3  化学：多段階/一段階どちらも同じポリマー製品 ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="複雑な多段階でも一段階でも同じポリマー製品ができる">
+    <style>
+      @keyframes s3_glow{0%,8%{fill-opacity:.06;stroke:#3b4043}18%{fill-opacity:.5;stroke:#8b1a10}30%,100%{fill-opacity:.06;stroke:#3b4043}}
+      @keyframes s3_glow4{0%,14%{fill-opacity:.06;stroke:#3b4043;stroke-width:2}30%{fill-opacity:1;stroke:#8b1a10;stroke-width:2.5}46%,100%{fill-opacity:.06;stroke:#3b4043;stroke-width:2}}
+      @keyframes s3_extrude{0%,40%{transform:translateX(-14px);opacity:0}52%{opacity:1;transform:translateX(-4px)}84%{transform:translateX(4px);opacity:1}94%{transform:translateX(8px);opacity:0}100%{opacity:0}}
+      @keyframes s3_flowR{0%{transform:translateX(0);opacity:1}11%{transform:translateX(54px);opacity:1}13%{transform:translateX(54px);opacity:0}100%{opacity:0}}
+      @keyframes s3_prodRin{0%,12%{opacity:0;transform:scale(.3)}18%{opacity:1;transform:scale(1.15)}26%,100%{opacity:1;transform:scale(1)}}
+      .s3_tank{transform-origin:center;animation:s3_glow 3.5s ease-in-out infinite}
+      .s3_t2{animation-delay:.16s}.s3_t3{animation-delay:.32s}
+      .s3_tank4{transform-origin:center;animation:s3_glow4 3.5s ease-in-out infinite;animation-delay:.48s}
+      .s3_extrude{animation:s3_extrude 3.5s ease-in-out infinite}
+      .s3_flowR{animation:s3_flowR 3.5s ease-in-out infinite}
+      .s3_prodRin{transform-box:fill-box;transform-origin:center;animation:s3_prodRin 3.5s ease-in-out infinite}
+    </style>
+    <g stroke-width="2" stroke-linejoin="round">
+      <rect class="s3_tank s3_t1" x="12" y="68" width="14" height="24" rx="4" fill="#8b1a10" stroke="#3b4043"/>
+      <rect class="s3_tank s3_t2" x="34" y="68" width="14" height="24" rx="4" fill="#8b1a10" stroke="#3b4043"/>
+      <rect class="s3_tank s3_t3" x="56" y="68" width="14" height="24" rx="4" fill="#8b1a10" stroke="#3b4043"/>
+      <rect class="s3_tank4" x="78" y="68" width="14" height="24" rx="4" fill="#8b1a10" stroke="#3b4043"/>
+    </g>
+    <g stroke="#3b4043" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7">
+      <path d="M28 80 h5 M50 80 h5 M72 80 h5 M96 80 h16"/>
+      <path d="M32 77 l3 3 -3 3 M54 77 l3 3 -3 3 M76 77 l3 3 -3 3 M108 77 l3 3 -3 3"/>
+    </g>
+    <g transform="translate(134,80)"><g class="s3_extrude"><path d="M-10 -6 L0 0 L10 -6 M0 0 L4 8 M0 0 L-6 7" fill="none" stroke="#8b1a10" stroke-width="2" stroke-linejoin="round"/><circle cx="0" cy="0" r="4.5" fill="#8b1a10"/><circle cx="-10" cy="-6" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="10" cy="-6" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="4" cy="8" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="-6" cy="7" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/></g></g>
+    <path d="M170 74 h34 v-9 l22 15 -22 15 v-9 h-34 Z" fill="#8b1a10"/>
+    <rect x="248" y="66" width="20" height="28" rx="5" fill="#8b1a10" fill-opacity=".14" stroke="#8b1a10" stroke-width="2.5" stroke-linejoin="round"/>
+    <g stroke="#3b4043" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"><path d="M272 80 h32"/><path d="M300 77 l3 3 -3 3"/></g>
+    <circle class="s3_flowR" cx="276" cy="80" r="3.5" fill="#8b1a10"/>
+    <g transform="translate(330,80)"><g class="s3_prodRin"><path d="M-10 -6 L0 0 L10 -6 M0 0 L4 8 M0 0 L-6 7" fill="none" stroke="#8b1a10" stroke-width="2" stroke-linejoin="round"/><circle cx="0" cy="0" r="4.5" fill="#8b1a10"/><circle cx="-10" cy="-6" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="10" cy="-6" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="4" cy="8" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/><circle cx="-6" cy="7" r="3.4" fill="#8b1a10" fill-opacity=".25" stroke="#8b1a10" stroke-width="1.6"/></g></g>
+  </svg>
+
+<!-- ===================== SLIDE 4  グリーンケミストリー：有害条件不要→地球＋芽＋酵素反応 ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="有害な条件が不要になり地球にやさしい酵素反応">
+    <style>
+      @keyframes s4_flame{0%,100%{transform:scaleY(1) scaleX(1)}50%{transform:scaleY(1.14) scaleX(.92)}}
+      @keyframes s4_merc{0%,100%{transform:scaleY(.7)}50%{transform:scaleY(1)}}
+      @keyframes s4_stem{0%,20%{stroke-dashoffset:15}45%,100%{stroke-dashoffset:0}}
+      @keyframes s4_leaf{0%,40%{opacity:0;transform:scale(0)}62%{opacity:1;transform:scale(1.1)}72%,100%{opacity:1;transform:scale(1)}}
+      @keyframes s4_sub{0%{transform:translate(-24px,0);opacity:0}12%{opacity:1}33%{transform:translate(0,0);opacity:1}42%,100%{transform:translate(0,0);opacity:0}}
+      @keyframes s4_prod{0%,45%{transform:translate(0,0);opacity:0}55%{opacity:1}90%{transform:translate(-23px,-8px);opacity:0}100%{opacity:0}}
+      @keyframes s4_pulse{0%,32%{transform:scale(1)}42%{transform:scale(1.13)}54%,100%{transform:scale(1)}}
+      @keyframes s4_dash{to{stroke-dashoffset:-14}}
+      .s4_flame{transform-origin:80px 92px;animation:s4_flame 1s ease-in-out infinite}
+      .s4_merc{transform-origin:112px 92px;animation:s4_merc 1.6s ease-in-out infinite}
+      .s4_stem{stroke-dasharray:15;animation:s4_stem 3.5s ease-in-out infinite}
+      .s4_leaf{transform-origin:288px 74px;animation:s4_leaf 3.5s ease-in-out infinite}
+      .s4_sub{animation:s4_sub 3.5s ease-in-out infinite}
+      .s4_prod{animation:s4_prod 3.5s ease-in-out infinite}
+      .s4_pulse{transform-origin:352px 34px;animation:s4_pulse 3.5s ease-in-out infinite}
+      .s4_arrow{stroke-dasharray:6 4;animation:s4_dash 1s linear infinite}
+    </style>
+    <g stroke="#3b4043" stroke-width="2" stroke-linejoin="round" fill="none">
+      <rect x="28" y="72" width="26" height="32" rx="6" fill="#3b4043" fill-opacity=".06"/>
+      <rect x="35" y="64" width="12" height="8" rx="2"/>
+      <g transform="translate(41,88)">
+        <path d="M-7 -3 a7 7 0 0 1 14 0 v4 q0 2 -3 3 v3 h-8 v-3 q-3 -1 -3 -3 Z" fill="#3b4043" fill-opacity=".12"/>
+        <circle cx="-3" cy="0" r="1.6" fill="#3b4043" stroke="none"/><circle cx="3" cy="0" r="1.6" fill="#3b4043" stroke="none"/>
+      </g>
+    </g>
+    <g class="s4_flame"><path d="M80 66 q9 8 5 18 q-2 6 -8 6 q-8 0 -8 -8 q0 -6 6 -11 q-1 6 3 9 q3 -6 -1 -14 Z" fill="#8b1a10" fill-opacity=".22" stroke="#8b1a10" stroke-width="2" stroke-linejoin="round"/></g>
+    <g stroke="#3b4043" stroke-width="2" fill="none" stroke-linecap="round">
+      <rect x="108" y="60" width="8" height="30" rx="4"/>
+      <circle cx="112" cy="94" r="7" fill="#8b1a10" fill-opacity=".28" stroke="#3b4043"/>
+      <path d="M118 66 h4 M118 72 h4 M118 78 h4" stroke-width="1.4"/>
+    </g>
+    <rect class="s4_merc" x="110" y="70" width="4" height="21" rx="2" fill="#8b1a10" stroke="none"/>
+    <line class="s4_arrow" x1="150" y1="88" x2="196" y2="88" stroke="#3b4043" stroke-width="2.5"/>
+    <path d="M192 82 l8 6 -8 6" fill="none" stroke="#3b4043" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- 地球（グローブ）＋芽：吹き出しと近接 -->
+    <g>
+      <circle cx="288" cy="100" r="15" fill="#2e7d5b" fill-opacity=".12" stroke="#3b4043" stroke-width="2"/>
+      <ellipse cx="288" cy="100" rx="8" ry="15" fill="none" stroke="#3b4043" stroke-width="1.4" opacity=".7"/>
+      <line x1="288" y1="85" x2="288" y2="115" stroke="#3b4043" stroke-width="1.4" opacity=".7"/>
+      <line x1="273" y1="100" x2="303" y2="100" stroke="#3b4043" stroke-width="1.4" opacity=".7"/>
+      <path d="M276.5 90.3 Q288 96 299.5 90.3" fill="none" stroke="#3b4043" stroke-width="1.4" opacity=".7"/>
+      <path d="M276.5 109.7 Q288 104 299.5 109.7" fill="none" stroke="#3b4043" stroke-width="1.4" opacity=".7"/>
+      <path class="s4_stem" d="M288 85 v-14" stroke="#2e7d5b" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <g class="s4_leaf">
+        <path d="M288 76 q-8 -2 -10 -9 q9 0 10 7 Z" fill="#2e7d5b" fill-opacity=".3" stroke="#2e7d5b" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M288 78 q8 -1 11 -8 q-9 -1 -11 6 Z" fill="#2e7d5b" fill-opacity=".3" stroke="#2e7d5b" stroke-width="1.6" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <path d="M320 16 L384 16 Q394 16 394 26 L394 42 Q394 52 384 52 L328 52 L316 64 L322 52 Q310 52 310 42 L310 26 Q310 16 320 16 Z" fill="#faf9f5" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/>
+    <g class="s4_pulse"><path transform="translate(352,34) rotate(180) scale(.4)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#8b1a10"/></g>
+    <g class="s4_sub"><path transform="translate(345,34)" d="M4.5 0 L2.25 3.9 L-2.25 3.9 L-4.5 0 L-2.25 -3.9 L2.25 -3.9 Z" fill="none" stroke="#8b1a10" stroke-width="2"/></g>
+    <g class="s4_prod"><path transform="translate(345,34)" d="M0 -5 L4.8 -1.5 L3 4 L-3 4 L-4.8 -1.5 Z" fill="#8b1a10"/></g>
+  </svg>
+
+<!-- ===================== SLIDE 5  新素材：分子が吸い込まれ→結晶＋NEW ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="未知の分子が酵素に吸い込まれ新素材が生まれる">
+    <style>
+      @keyframes s5_suck0{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(119px,30px);opacity:0}100%{transform:translate(119px,30px);opacity:0}}
+      @keyframes s5_suck1{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(75px,36px);opacity:0}100%{transform:translate(75px,36px);opacity:0}}
+      @keyframes s5_suck2{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(105px,-24px);opacity:0}100%{transform:translate(105px,-24px);opacity:0}}
+      @keyframes s5_suck3{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(59px,-10px);opacity:0}100%{transform:translate(59px,-10px);opacity:0}}
+      @keyframes s5_suck4{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(127px,-4px);opacity:0}100%{transform:translate(127px,-4px);opacity:0}}
+      @keyframes s5_suck5{0%{transform:translate(0,0);opacity:1}10%{opacity:1}62%{transform:translate(57px,20px);opacity:0}100%{transform:translate(57px,20px);opacity:0}}
+      @keyframes s5_ripple{0%{r:20;opacity:.5}70%,100%{r:62;opacity:0}}
+      @keyframes s5_crystal{0%,55%{opacity:0;transform:scale(.5)}75%{opacity:1;transform:scale(1.1)}85%,100%{opacity:1;transform:scale(1)}}
+      @keyframes s5_new{0%,60%{opacity:0}72%{opacity:1}80%{opacity:.5}88%,100%{opacity:1}}
+      .s5_rip{transform-origin:180px 80px;animation:s5_ripple 4s ease-out infinite}
+      .s5_rip2{animation-delay:1.3s}.s5_rip3{animation-delay:2.6s}
+      .s5_cry{transform-origin:322px 78px;animation:s5_crystal 5.5s ease-in-out infinite}
+      .s5_newtag{animation:s5_new 5.5s ease-in-out infinite}
+    </style>
+    <!-- 左：分子と？が酵素のポケットに吸い込まれる -->
+    <g class="s5_s0" style="animation:s5_suck0 4s ease-in infinite;animation-delay:0.00s"><g transform="translate(44,50)"><circle cx="0" cy="0" r="7" fill="none" stroke="#3b4043" stroke-width="2"/></g></g>
+    <g class="s5_s1" style="animation:s5_suck1 4s ease-in infinite;animation-delay:0.12s"><g transform="translate(88,44)"><rect x="-6" y="-6" width="12" height="12" rx="2" fill="none" stroke="#3b4043" stroke-width="2"/></g></g>
+    <g class="s5_s2" style="animation:s5_suck2 4s ease-in infinite;animation-delay:0.24s"><g transform="translate(58,104)"><path d="M0 -8 L8 6 L-8 6 Z" fill="none" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/></g></g>
+    <g class="s5_s3" style="animation:s5_suck3 4s ease-in infinite;animation-delay:0.36s"><g transform="translate(104,90)"><text x="0" y="6" font-size="18" font-weight="700" fill="#8b1a10" stroke="none" font-family="Inter,sans-serif" text-anchor="middle">?</text></g></g>
+    <g class="s5_s4" style="animation:s5_suck4 4s ease-in infinite;animation-delay:0.48s"><g transform="translate(36,84)"><text x="0" y="5" font-size="15" font-weight="700" fill="#8b1a10" stroke="none" font-family="Inter,sans-serif" text-anchor="middle">?</text></g></g>
+    <g class="s5_s5" style="animation:s5_suck5 4s ease-in infinite;animation-delay:0.60s"><g transform="translate(106,60)"><text x="0" y="4" font-size="13" font-weight="700" fill="#8b1a10" stroke="none" font-family="Inter,sans-serif" text-anchor="middle">?</text></g></g>
+    <!-- 中：酵素（ポケットが左向き）＋波紋エフェクト -->
+    <circle class="s5_rip s5_rip1" cx="180" cy="80" r="20" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <circle class="s5_rip s5_rip2" cx="180" cy="80" r="20" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <circle class="s5_rip s5_rip3" cx="180" cy="80" r="20" fill="none" stroke="#8b1a10" stroke-width="2"/>
+    <path transform="translate(180,80) rotate(180)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#8b1a10"/>
+    <line x1="208" y1="80" x2="250" y2="80" stroke="#3b4043" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <path d="M246 74 l8 6 -8 6" fill="none" stroke="#3b4043" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- 右：結晶化した新素材＋NEW（変更なし） -->
+    <g class="s5_cry" fill="none" stroke="#8b1a10" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M322 54 l24 14 v28 l-24 14 -24 -14 v-28 Z" fill="#8b1a10" fill-opacity=".12"/>
+      <path d="M322 54 v28 M322 82 l24 14 M322 82 l-24 14" stroke-width="1.6"/>
+    </g>
+    <g class="s5_newtag">
+      <rect x="332" y="40" width="42" height="18" rx="9" fill="#8b1a10"/>
+      <text x="353" y="53" font-size="11" font-weight="700" fill="#faf9f5" text-anchor="middle" font-family="Inter,sans-serif" letter-spacing="1">NEW</text>
+    </g>
+  </svg>
+
+<!-- ===================== SLIDE 6  全産業：3種の酵素が触媒反応→研究者・技術者が歓喜 ===================== -->
+<svg class="icon" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3種の酵素がそれぞれ触媒反応し、研究者や技術者が喜ぶ">
+    <style>
+      @keyframes s6a_sub{0%{transform:translate(-20px,-6px);opacity:0}12%{opacity:1}36%{transform:translate(0,0);opacity:1}45%,100%{opacity:0}}@keyframes s6a_prod{0%,46%{transform:translate(0,0);opacity:0}56%{opacity:1}82%{transform:translate(-16px,15px);opacity:0}100%{opacity:0}}
+      @keyframes s6b_sub{0%{transform:translate(-20px,-6px);opacity:0}12%{opacity:1}36%{transform:translate(0,0);opacity:1}45%,100%{opacity:0}}@keyframes s6b_prod{0%,46%{transform:translate(0,0);opacity:0}56%{opacity:1}82%{transform:translate(-16px,15px);opacity:0}100%{opacity:0}}
+      @keyframes s6c_sub{0%{transform:translate(-20px,-6px);opacity:0}12%{opacity:1}36%{transform:translate(0,0);opacity:1}45%,100%{opacity:0}}@keyframes s6c_prod{0%,46%{transform:translate(0,0);opacity:0}56%{opacity:1}82%{transform:translate(-16px,15px);opacity:0}100%{opacity:0}}
+      .s6a_rip{transform-origin:96px 50px;animation:s6_ripple 5s ease-out infinite}.s6a_rip2{animation-delay:1.6s}.s6a_rip3{animation-delay:3.2s}.s6a_sub{animation:s6a_sub 5s ease-in-out infinite}.s6a_prod{animation:s6a_prod 5s ease-in-out infinite}
+      .s6b_rip{transform-origin:200px 50px;animation:s6_ripple 5s ease-out infinite}.s6b_rip2{animation-delay:1.6s}.s6b_rip3{animation-delay:3.2s}.s6b_sub{animation:s6b_sub 5s ease-in-out infinite}.s6b_prod{animation:s6b_prod 5s ease-in-out infinite}
+      .s6c_rip{transform-origin:304px 50px;animation:s6_ripple 5s ease-out infinite}.s6c_rip2{animation-delay:1.6s}.s6c_rip3{animation-delay:3.2s}.s6c_sub{animation:s6c_sub 5s ease-in-out infinite}.s6c_prod{animation:s6c_prod 5s ease-in-out infinite}
+      @keyframes s6_ripple{0%{r:14;opacity:.5}70%,100%{r:40;opacity:0}}
+      @keyframes s6p0{0%,6%{opacity:0;transform:translateY(8px) scale(.6)}16%{opacity:1;transform:translateY(-2px) scale(1.05)}24%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(0) scale(1)}92%,100%{opacity:0;transform:translateY(0) scale(1)}}
+      @keyframes s6p1{0%,11%{opacity:0;transform:translateY(8px) scale(.6)}21%{opacity:1;transform:translateY(-2px) scale(1.05)}29%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(0) scale(1)}92%,100%{opacity:0;transform:translateY(0) scale(1)}}
+      @keyframes s6p2{0%,16%{opacity:0;transform:translateY(8px) scale(.6)}26%{opacity:1;transform:translateY(-2px) scale(1.05)}34%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(0) scale(1)}92%,100%{opacity:0;transform:translateY(0) scale(1)}}
+      @keyframes s6p3{0%,21%{opacity:0;transform:translateY(8px) scale(.6)}31%{opacity:1;transform:translateY(-2px) scale(1.05)}39%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(0) scale(1)}92%,100%{opacity:0;transform:translateY(0) scale(1)}}
+      @keyframes s6p4{0%,26%{opacity:0;transform:translateY(8px) scale(.6)}36%{opacity:1;transform:translateY(-2px) scale(1.05)}44%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(0) scale(1)}92%,100%{opacity:0;transform:translateY(0) scale(1)}}
+    </style>
+    <circle class="s6a_rip s6a_rip1" cx="96" cy="50" r="15" fill="none" stroke="#9aa0a3" stroke-width="2"/><circle class="s6a_rip s6a_rip2" cx="96" cy="50" r="15" fill="none" stroke="#9aa0a3" stroke-width="2"/><circle class="s6a_rip s6a_rip3" cx="96" cy="50" r="15" fill="none" stroke="#9aa0a3" stroke-width="2"/><path transform="translate(96,50) rotate(180) scale(.8)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#9aa0a3"/><g class="s6a_sub"><g transform="translate(82,50)" stroke="#9aa0a3"><path d="M0 -4 L4 3.2 L-4 3.2 Z" fill="none" stroke-width="2" stroke-linejoin="round"/></g></g><g class="s6a_prod"><g transform="translate(82,50)" stroke="#9aa0a3"><circle cx="0" cy="0" r="3.6" fill="none" stroke-width="2"/></g></g>
+    <circle class="s6b_rip s6b_rip1" cx="200" cy="50" r="15" fill="none" stroke="#3b4043" stroke-width="2"/><circle class="s6b_rip s6b_rip2" cx="200" cy="50" r="15" fill="none" stroke="#3b4043" stroke-width="2"/><circle class="s6b_rip s6b_rip3" cx="200" cy="50" r="15" fill="none" stroke="#3b4043" stroke-width="2"/><path transform="translate(200,50) rotate(180) scale(.8)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#3b4043"/><g class="s6b_sub"><g transform="translate(186,50)" stroke="#3b4043"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" rx="1.5" fill="none" stroke-width="2"/></g></g><g class="s6b_prod"><g transform="translate(186,50)" stroke="#3b4043"><path d="M0 -4.2 L4 -1.2 L2.5 3.4 L-2.5 3.4 L-4 -1.2 Z" fill="none" stroke-width="2" stroke-linejoin="round"/></g></g>
+    <circle class="s6c_rip s6c_rip1" cx="304" cy="50" r="15" fill="none" stroke="#8b1a10" stroke-width="2"/><circle class="s6c_rip s6c_rip2" cx="304" cy="50" r="15" fill="none" stroke="#8b1a10" stroke-width="2"/><circle class="s6c_rip s6c_rip3" cx="304" cy="50" r="15" fill="none" stroke="#8b1a10" stroke-width="2"/><path transform="translate(304,50) rotate(180) scale(.8)" d="M17.52 -4.11 C20 -11 10 -19 -2 -18 C-16 -16 -19 -6 -18 2 C-17 12 -8 19 2 18 C11 17 18 12 17.52 4.11 L14.83 4.95 Q13.59 5.33 12.67 4.41 L9.17 0.92 Q8.25 0 9.17 -0.92 L12.67 -4.41 Q13.59 -5.33 14.83 -4.95 L17.52 -4.11 Z" fill="#8b1a10"/><g class="s6c_sub"><g transform="translate(290,50)" stroke="#8b1a10"><path d="M4.2 0 L2.1 3.6 L-2.1 3.6 L-4.2 0 L-2.1 -3.6 L2.1 -3.6 Z" fill="none" stroke-width="2" stroke-linejoin="round"/></g></g><g class="s6c_prod"><g transform="translate(290,50)" stroke="#8b1a10"><path d="M0 -4.6 L4.2 0 L0 4.6 L-4.2 0 Z" fill="none" stroke-width="2" stroke-linejoin="round"/></g></g>
+    <g class="s6p0" style="transform-origin:64px 140px;animation:s6p0 5s ease-in-out infinite"><path d="M60 116 L53 106 M68 116 L75 106" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><circle cx="53" cy="106" r="1.9" fill="#3b4043"/><circle cx="75" cy="106" r="1.9" fill="#3b4043"/><path d="M61 129 L60 140 M67 129 L68 140" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><path d="M58 115 L70 115 L72 130 L56 130 Z" fill="#faf9f5" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/><path d="M64 115 L61 120 M64 115 L67 120 M64 120 L64 129" fill="none" stroke="#3b4043" stroke-width="1.4"/><circle cx="64" cy="110" r="4.7" fill="#faf9f5" stroke="#3b4043" stroke-width="2"/><path d="M61.8 111 q2.2 2.2 4.4 0" fill="none" stroke="#3b4043" stroke-width="1.2" stroke-linecap="round"/></g>
+    <g class="s6p1" style="transform-origin:132px 140px;animation:s6p1 5s ease-in-out infinite"><path d="M128 116 L121 106 M136 116 L143 106" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><circle cx="121" cy="106" r="1.9" fill="#3b4043"/><circle cx="143" cy="106" r="1.9" fill="#3b4043"/><path d="M129 129 L128 140 M135 129 L136 140" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><path d="M126 115 L138 115 L139 130 L125 130 Z" fill="#8b1a10" fill-opacity=".14" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/><path d="M129 115 L129 127 M135 115 L135 127" fill="none" stroke="#3b4043" stroke-width="1.4"/><circle cx="132" cy="110" r="4.7" fill="#faf9f5" stroke="#3b4043" stroke-width="2"/><path d="M126 107 a6 6 0 0 1 12 0 Z" fill="#8b1a10" stroke="#3b4043" stroke-width="1.6" stroke-linejoin="round"/><path d="M125 107 h14" stroke="#3b4043" stroke-width="1.6" stroke-linecap="round"/><path d="M129.8 111 q2.2 2.2 4.4 0" fill="none" stroke="#3b4043" stroke-width="1.2" stroke-linecap="round"/></g>
+    <g class="s6p2" style="transform-origin:200px 140px;animation:s6p2 5s ease-in-out infinite"><path d="M196 116 L189 106 M204 116 L211 106" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><circle cx="189" cy="106" r="1.9" fill="#3b4043"/><circle cx="211" cy="106" r="1.9" fill="#3b4043"/><path d="M197 129 L196 140 M203 129 L204 140" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><path d="M194 115 L206 115 L208 130 L192 130 Z" fill="#faf9f5" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/><path d="M200 115 L197 120 M200 115 L203 120 M200 120 L200 129" fill="none" stroke="#3b4043" stroke-width="1.4"/><circle cx="200" cy="110" r="4.7" fill="#faf9f5" stroke="#3b4043" stroke-width="2"/><path d="M197.8 111 q2.2 2.2 4.4 0" fill="none" stroke="#3b4043" stroke-width="1.2" stroke-linecap="round"/></g>
+    <g class="s6p3" style="transform-origin:268px 140px;animation:s6p3 5s ease-in-out infinite"><path d="M264 116 L257 106 M272 116 L279 106" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><circle cx="257" cy="106" r="1.9" fill="#3b4043"/><circle cx="279" cy="106" r="1.9" fill="#3b4043"/><path d="M265 129 L264 140 M271 129 L272 140" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><path d="M262 115 L274 115 L275 130 L261 130 Z" fill="#8b1a10" fill-opacity=".14" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/><path d="M265 115 L265 127 M271 115 L271 127" fill="none" stroke="#3b4043" stroke-width="1.4"/><circle cx="268" cy="110" r="4.7" fill="#faf9f5" stroke="#3b4043" stroke-width="2"/><path d="M262 107 a6 6 0 0 1 12 0 Z" fill="#8b1a10" stroke="#3b4043" stroke-width="1.6" stroke-linejoin="round"/><path d="M261 107 h14" stroke="#3b4043" stroke-width="1.6" stroke-linecap="round"/><path d="M265.8 111 q2.2 2.2 4.4 0" fill="none" stroke="#3b4043" stroke-width="1.2" stroke-linecap="round"/></g>
+    <g class="s6p4" style="transform-origin:336px 140px;animation:s6p4 5s ease-in-out infinite"><path d="M332 116 L325 106 M340 116 L347 106" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><circle cx="325" cy="106" r="1.9" fill="#3b4043"/><circle cx="347" cy="106" r="1.9" fill="#3b4043"/><path d="M333 129 L332 140 M339 129 L340 140" fill="none" stroke="#3b4043" stroke-width="2" stroke-linecap="round"/><path d="M330 115 L342 115 L344 130 L328 130 Z" fill="#faf9f5" stroke="#3b4043" stroke-width="2" stroke-linejoin="round"/><path d="M336 115 L333 120 M336 115 L339 120 M336 120 L336 129" fill="none" stroke="#3b4043" stroke-width="1.4"/><circle cx="336" cy="110" r="4.7" fill="#faf9f5" stroke="#3b4043" stroke-width="2"/><path d="M333.8 111 q2.2 2.2 4.4 0" fill="none" stroke="#3b4043" stroke-width="1.2" stroke-linecap="round"/></g>
+  </svg>
